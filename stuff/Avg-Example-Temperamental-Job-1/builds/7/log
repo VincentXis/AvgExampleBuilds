@@ -1,0 +1,112 @@
+Started by user [8mha:////4L/N6XTJELn0IP8DsVHDnRm5iBF9rVl34bsb/ucYjjJnAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+[EnvInject] - Loading node environment variables.
+Building in workspace C:\Program Files (x86)\Jenkins\workspace\Avg-Example-Temperamental-Job-1
+ > git.exe rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git.exe config remote.origin.url https://github.com/VincentXis/MvnSleepingDummy.git # timeout=10
+Cleaning workspace
+ > git.exe rev-parse --verify HEAD # timeout=10
+Resetting working tree
+ > git.exe reset --hard # timeout=10
+ > git.exe clean -fdx # timeout=10
+Fetching upstream changes from https://github.com/VincentXis/MvnSleepingDummy.git
+ > git.exe --version # timeout=10
+ > git.exe fetch --tags --progress https://github.com/VincentXis/MvnSleepingDummy.git +refs/heads/*:refs/remotes/origin/*
+ > git.exe rev-parse "refs/remotes/origin/master^{commit}" # timeout=10
+ > git.exe rev-parse "refs/remotes/origin/origin/master^{commit}" # timeout=10
+Checking out Revision b70716e3005c6dd1431c40ccde906d8c70cbb920 (refs/remotes/origin/master)
+Commit message: "dummy didn't uncommment run command in pom..."
+ > git.exe config core.sparsecheckout # timeout=10
+ > git.exe checkout -f b70716e3005c6dd1431c40ccde906d8c70cbb920
+ > git.exe rev-list b70716e3005c6dd1431c40ccde906d8c70cbb920 # timeout=10
+Run condition [Always] enabling prebuild for step [Execute Windows batch command]
+Run condition [File exists] enabling prebuild for step [Execute Windows batch command]
+Run condition [Always] enabling perform for step [Execute Windows batch command]
+[Avg-Example-Temperamental-Job-1] $ cmd /c call C:\Windows\TEMP\jenkins5831251288672391482.bat
+
+C:\Program Files (x86)\Jenkins\workspace\Avg-Example-Temperamental-Job-1>echo "trying to clean compile package project" 
+"trying to clean compile package project"
+
+C:\Program Files (x86)\Jenkins\workspace\Avg-Example-Temperamental-Job-1>mvn clean compile package 
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building mvn-sleeping-dummy 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ mvn-sleeping-dummy ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ mvn-sleeping-dummy ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Program Files (x86)\Jenkins\workspace\Avg-Example-Temperamental-Job-1\src\main\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ mvn-sleeping-dummy ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to C:\Program Files (x86)\Jenkins\workspace\Avg-Example-Temperamental-Job-1\target\classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ mvn-sleeping-dummy ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Program Files (x86)\Jenkins\workspace\Avg-Example-Temperamental-Job-1\src\main\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ mvn-sleeping-dummy ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ mvn-sleeping-dummy ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Program Files (x86)\Jenkins\workspace\Avg-Example-Temperamental-Job-1\src\test\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ mvn-sleeping-dummy ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to C:\Program Files (x86)\Jenkins\workspace\Avg-Example-Temperamental-Job-1\target\test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ mvn-sleeping-dummy ---
+[INFO] Surefire report directory: C:\Program Files (x86)\Jenkins\workspace\Avg-Example-Temperamental-Job-1\target\surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running wawa.gaga.AppTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ mvn-sleeping-dummy ---
+[INFO] Building jar: C:\Program Files (x86)\Jenkins\workspace\Avg-Example-Temperamental-Job-1\target\mvn-sleeping-dummy-1.0-SNAPSHOT.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 1.938 s
+[INFO] Finished at: 2017-11-09T22:33:09+01:00
+[INFO] Final Memory: 16M/158M
+[INFO] ------------------------------------------------------------------------
+[File exists] check if file exists [target\mvn-sleeping-dummy-1.0-SNAPSHOT.jar]
+Run condition [File exists] enabling perform for step [Execute Windows batch command]
+[Avg-Example-Temperamental-Job-1] $ cmd /c call C:\Windows\TEMP\jenkins4752711902482914023.bat
+
+C:\Program Files (x86)\Jenkins\workspace\Avg-Example-Temperamental-Job-1>echo "wawa" 
+"wawa"
+
+C:\Program Files (x86)\Jenkins\workspace\Avg-Example-Temperamental-Job-1>java -cp target\mvn-sleeping-dummy-1.0-SNAPSHOT.jar wawa.gaga.App true true 
+I'm gonna have a nap!
+Zzz...
+                _______ 
+          _____/      \\_____  
+         |  _     ___   _   || 
+         | | \     |   | \  || 
+         | |  |    |   |  | || 
+         | |_/     |   |_/  || 
+         | | \     |   |    || 
+         | |  \    |   |    || 
+         | |   \. _|_. | .  || 
+         |                  || 
+         |      A dummy,    || 
+         |  counting sheep  || 
+ *       | *   **    * **   |**      ** 
+ \\)),),/.,(//,,..,,\||(,,.,\\)/,.((//
+
+C:\Program Files (x86)\Jenkins\workspace\Avg-Example-Temperamental-Job-1>exit 1 
+Build step 'Conditional step (single)' marked build as failure
+Finished: FAILURE
